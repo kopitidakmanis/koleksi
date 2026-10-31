@@ -3,99 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ruang Gaya - Beranda</title>
+  <title>Ruang Gaya - Modern Heritage</title>
   
-  <!-- Font mirip Wash House & Pastael -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <!-- Font: Playfair untuk kesan klasik/tradisional, Inter untuk kesan modern/Gen Z -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
   
   <style>
-    /* PALET WARNA BERDASARKAN MOODBOARD KAMU */
+    /* PALET WARNA: Perpaduan Tradisional (Hijau Daun, Krem) & Playful (Oranye, Kuning) */
     :root {
-      --bg-cream: #F9F6F0;
-      --text-dark: #3A322C;
-      --orange-sunny: #E87A41;
-      --yellow-bright: #F4D03F;
-      --green-vibrant: #4D8A4E;
-      --blue-sky: #5D9CEC;
+      --bg-cream: #FDFBF7;
+      --text-dark: #2B2825;
+      --accent-orange: #E87A41;
+      --accent-yellow: #F4D03F;
+      --accent-green: #3D6B4A;
       --white: #FFFFFF;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); color: var(--text-dark); line-height: 1.6; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
     
     /* NAVBAR */
     .navbar {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 20px 40px; background: var(--white); border-bottom: 1px solid #eee;
+      padding: 16px 24px; background: var(--white); border-bottom: 1px solid #EAEAEA;
+      position: sticky; top: 0; z-index: 100;
     }
-    .navbar-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; }
-    .navbar-menu { display: flex; gap: 24px; font-weight: 600; font-size: 0.9rem; }
-    .navbar-menu a { text-decoration: none; color: var(--text-dark); }
-    .navbar-cart { background: var(--text-dark); color: var(--white); padding: 8px 16px; border-radius: 50px; font-weight: 600; font-size: 0.8rem; text-decoration: none; }
+    .navbar-brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; letter-spacing: 0.5px; }
+    .navbar-cart { background: var(--text-dark); color: var(--white); padding: 10px 20px; border-radius: 50px; font-weight: 600; font-size: 0.85rem; text-decoration: none; }
 
-    /* HERO SECTION (TRUST FIRST) */
+    /* 1. HERO SECTION (SOFT SELLING) */
     .hero {
-      text-align: center; padding: 80px 20px 40px; max-width: 900px; margin: 0 auto;
+      text-align: center; padding: 60px 20px 40px; max-width: 800px; margin: 0 auto;
     }
-    .hero-pre-title { font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; color: var(--orange-sunny); text-transform: uppercase; margin-bottom: 16px; }
-    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin-bottom: 24px; }
-    .hero-desc { font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto; }
+    .hero h1 { 
+      font-family: 'Playfair Display', serif; 
+      font-size: clamp(2.2rem, 6vw, 3.5rem); 
+      line-height: 1.15; margin-bottom: 16px; 
+    }
+    .hero h1 span { font-style: italic; color: var(--accent-orange); }
+    .hero p { font-size: 1rem; color: #666; max-width: 500px; margin: 0 auto; }
 
-    /* TESTIMONI SLIDER (OPSI B) */
-    .testimoni-section { padding: 40px 20px 60px; overflow: hidden; }
-    .testimoni-slider {
-      display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 20px;
-      scrollbar-width: none; /* Sembunyikan scrollbar */
+    /* SECTION TITLE */
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 16px; padding-left: 24px; }
+
+    /* 2. PRODUK SLIDER (HORIZONTAL) */
+    .product-section { padding: 20px 0 40px; }
+    .product-slider {
+      display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+      padding: 0 24px 20px; scrollbar-width: none;
     }
-    .testimoni-slider::-webkit-scrollbar { display: none; }
-    
+    .product-slider::-webkit-scrollbar { display: none; }
+    .product-card {
+      flex: 0 0 200px; scroll-snap-align: start; background: var(--white);
+      border-radius: 16px; overflow: hidden; border: 1px solid #EAEAEA;
+    }
+    .product-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; background: #eee; }
+    .product-info { padding: 12px; }
+    .product-cat { font-size: 0.7rem; font-weight: 800; color: var(--accent-orange); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .product-name { font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; line-height: 1.3; }
+    .product-price { font-weight: 800; font-size: 0.9rem; }
+
+    /* 3. REVIEW SLIDER (FAKTA & MOMEN) */
+    .review-section { padding: 20px 0 40px; background: var(--white); margin: 20px 0; }
+    .review-slider {
+      display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+      padding: 0 24px 20px; scrollbar-width: none;
+    }
+    .review-slider::-webkit-scrollbar { display: none; }
     .review-card {
-      flex: 0 0 280px; background: var(--white); border-radius: 16px; padding: 16px;
-      scroll-snap-align: start; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      flex: 0 0 280px; scroll-snap-align: start; 
     }
-    .review-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 12px; margin-bottom: 12px; background: #eee; }
-    .review-stars { color: var(--yellow-bright); font-size: 1rem; margin-bottom: 8px; }
-    .review-text { font-size: 0.9rem; font-weight: 600; margin-bottom: 12px; line-height: 1.4; }
-    .review-user { font-size: 0.8rem; color: #888; display: flex; align-items: center; gap: 8px; }
-    .review-user span { font-weight: 700; color: var(--text-dark); }
+    .review-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px; margin-bottom: 12px; }
+    .review-caption { font-size: 0.9rem; font-weight: 600; }
+    .review-caption span { color: var(--accent-orange); }
 
-    /* BEST SELLER (GAYA WASH HOUSE) */
-    .bestseller-section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
-    .bestseller-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; }
-    .bestseller-header h2 { font-family: 'Playfair Display', serif; font-size: 2rem; }
-    
-    .bestseller-card {
-      display: grid; grid-template-columns: 1fr 1fr; background: var(--orange-sunny);
-      border-radius: 24px; overflow: hidden; color: var(--white);
+    /* 4. DETAIL PRODUK (SPLIT SCREEN GESER) */
+    .detail-section { padding: 40px 24px 60px; max-width: 900px; margin: 0 auto; }
+    .detail-card {
+      display: grid; grid-template-columns: 1fr; gap: 0; background: var(--white);
+      border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
-    @media (max-width: 768px) { .bestseller-card { grid-template-columns: 1fr; } }
+    @media(min-width: 768px) { .detail-card { grid-template-columns: 1fr 1fr; } }
     
-    .bestseller-info { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
-    .bestseller-info h3 { font-family: 'Playfair Display', serif; font-size: 2.5rem; line-height: 1.1; margin-bottom: 16px; }
-    .bestseller-price { font-size: 1.5rem; font-weight: 800; margin-bottom: 24px; }
-    .btn-bestseller { background: var(--white); color: var(--orange-sunny); padding: 16px 32px; border-radius: 50px; font-weight: 800; text-decoration: none; display: inline-block; align-self: flex-start; }
+    .detail-info { padding: 32px; display: flex; flex-direction: column; justify-content: center; }
+    .detail-info h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 12px; line-height: 1.1; }
+    .detail-info p { color: #666; font-size: 0.95rem; margin-bottom: 24px; }
+    .detail-price { font-size: 1.4rem; font-weight: 800; margin-bottom: 24px; }
+    .btn-add { background: var(--accent-green); color: var(--white); padding: 16px; border-radius: 50px; font-weight: 800; text-align: center; text-decoration: none; transition: transform 0.2s; }
     
-    .bestseller-img { width: 100%; height: 100%; object-fit: cover; min-height: 300px; }
-
-    /* AESTHETIC GRID & BUNDLE */
-    .grid-section { padding: 40px 20px 80px; max-width: 1000px; margin: 0 auto; }
-    .moodboard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .moodboard-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 16px; }
+    /* SLIDER DI DALAM DETAIL PRODUK */
+    .detail-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .detail-slider::-webkit-scrollbar { display: none; }
+    .detail-slider img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; min-height: 350px; scroll-snap-align: start; }
     
-    /* Kotak Promo di tengah grid */
-    .promo-box {
-      background: var(--green-vibrant); color: var(--white); border-radius: 16px;
-      padding: 24px; display: flex; flex-direction: column; justify-content: center; text-align: center;
-    }
-    .promo-box h4 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 8px; line-height: 1.2; }
-    .promo-box p { font-size: 0.85rem; margin-bottom: 16px; opacity: 0.9; }
-    .promo-btn { background: var(--yellow-bright); color: var(--text-dark); padding: 10px 20px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 0.85rem; }
-
-    /* FOOTER CTA */
-    .footer-cta { background: var(--text-dark); color: var(--white); text-align: center; padding: 80px 20px; }
-    .footer-cta h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 16px; }
-    .footer-cta p { color: #aaa; margin-bottom: 32px; }
-    .btn-main-katalog { background: var(--yellow-bright); color: var(--text-dark); padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-block; }
   </style>
 </head>
 <body>
@@ -103,93 +103,94 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="navbar-brand">ruang gaya.</div>
-    <div class="navbar-menu">
-      <a href="#">Beranda</a>
-      <a href="#">Katalog</a>
-      <a href="#">Custom</a>
-    </div>
     <a href="#" class="navbar-cart">Keranjang (0)</a>
   </nav>
 
-  <!-- HERO SECTION (TRUST) -->
+  <!-- 1. HERO SECTION (Tanpa Menekan, Hanya Fakta & Momen) -->
   <section class="hero">
-    <div class="hero-pre-title">Ulasan Pelanggan</div>
-    <h1 class="hero-title">10.000+ Gen Z sudah upgrade style-nya.</h1>
-    <p class="hero-desc">Jangan cuma lihat katalognya. Lihat sendiri kata mereka yang sudah pakai outfit dari ruang gaya.</p>
+    <h1>Ribuan orang sudah menjadi bagian dari <span>momen bahagianya.</span></h1>
+    <p>Sekarang, giliran kamu. Bikin statement di setiap acara tanpa harus kaku.</p>
   </section>
 
-  <!-- TESTIMONI SLIDER -->
-  <section class="testimoni-section">
-    <div class="testimoni-slider">
-      <!-- Kartu Review 1 -->
+  <!-- 2. PRODUK SLIDER -->
+  <section class="product-section">
+    <h2 class="section-title">Temukan Gayamu</h2>
+    <div class="product-slider">
+      <!-- Produk 1 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1583391733958-d25e07fac04f?w=500&q=80" alt="Kebaya Modern" class="product-img">
+        <div class="product-info">
+          <div class="product-cat">Kondangan & Event</div>
+          <div class="product-name">Kebaya Modern 'Sore'</div>
+          <div class="product-price">Rp249.000</div>
+        </div>
+      </div>
+      <!-- Produk 2 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80" alt="Batik Santai" class="product-img">
+        <div class="product-info">
+          <div class="product-cat">Konser & Nongkrong</div>
+          <div class="product-name">Batik Crop 'Malam'</div>
+          <div class="product-price">Rp189.000</div>
+        </div>
+      </div>
+      <!-- Produk 3 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&q=80" alt="Kebaya Lebaran" class="product-img">
+        <div class="product-info">
+          <div class="product-cat">Lebaran</div>
+          <div class="product-name">Kebaya Renda 'Eid'</div>
+          <div class="product-price">Rp299.000</div>
+        </div>
+      </div>
+      <!-- Produk 4 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500&q=80" alt="Outer" class="product-img">
+        <div class="product-info">
+          <div class="product-cat">Outerwear</div>
+          <div class="product-name">Outer Tenun 'Bali'</div>
+          <div class="product-price">Rp159.000</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. REVIEW SLIDER (Momen & Fakta) -->
+  <section class="review-section">
+    <h2 class="section-title">Momen Bersama Kami</h2>
+    <div class="review-slider">
       <div class="review-card">
-        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80" alt="OOTD Sasha" class="review-img">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Bahannya adem banget, dipake jalan santai sama nongkrong enak. Fix langganan!"</p>
-        <div class="review-user">Oleh <span>@sasha_</span></div>
+        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=500&q=80" alt="Kondangan" class="review-img">
+        <p class="review-caption">Dipakai <span>@sasha_</span> ke acara kondangan minggu lalu.</p>
       </div>
-      <!-- Kartu Review 2 -->
       <div class="review-card">
-        <img src="https://images.unsplash.com/photo-1550614000-4b95d858288d?w=500&q=80" alt="OOTD Budi" class="review-img">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Gila sih ini, packaging rapi banget. Baju sesuai foto, ukurannya pas."</p>
-        <div class="review-user">Oleh <span>@budi_keren</span></div>
+        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&q=80" alt="Konser" class="review-img">
+        <p class="review-caption">Gaya <span>@budi_keren</span> pas nonton konser pakai Batik Crop.</p>
       </div>
-      <!-- Kartu Review 3 -->
       <div class="review-card">
-        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=500&q=80" alt="OOTD Naya" class="review-img">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Kualitas jahitannya rapi, ga murahan. Warnanya juga cakep banget!"</p>
-        <div class="review-user">Oleh <span>@nayabella</span></div>
+        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=500&q=80" alt="Jalan" class="review-img">
+        <p class="review-caption">Jalan sore pakai outer tenun, makin kece kata <span>@nayabella</span>.</p>
       </div>
     </div>
   </section>
 
-  <!-- BEST SELLER (Wash House Style) -->
-  <section class="bestseller-section">
-    <div class="bestseller-header">
-      <h2>Lagi Hype Minggu Ini</h2>
-    </div>
-    <div class="bestseller-card">
-      <div class="bestseller-info">
-        <h3>Kaos Oversize 'No Drama'</h3>
-        <p style="margin-bottom: 24px; opacity: 0.9;">Bahan Cotton Combed 30s. Adem, jatuh di badan, dan bikin look kamu instan kece.</p>
-        <div class="bestseller-price">Rp89.000</div>
-        <a href="#" class="btn-bestseller">+ Keranjang</a>
+  <!-- 4. HIGHLIGHT PRODUK (Split Screen + Slider) -->
+  <section class="detail-section">
+    <h2 class="section-title" style="padding-left: 0;">Sorotan Minggu Ini</h2>
+    <div class="detail-card">
+      <div class="detail-info">
+        <h3>Kebaya Modern 'Sore'</h3>
+        <p>Bahan brokat premium yang adem. Cocok banget dipadukan dengan sneakers atau celana kulot biar gaya kondanganmu nggak kaku.</p>
+        <div class="detail-price">Rp249.000</div>
+        <a href="#" class="btn-add">+ Tambah ke Keranjang</a>
       </div>
-      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80" alt="Kaos Oversize" class="bestseller-img">
-    </div>
-  </section>
-
-  <!-- AESTHETIC GRID & BUNDLE -->
-  <section class="grid-section">
-    <h2 style="font-family: 'Playfair Display'; font-size: 2rem; margin-bottom: 24px; text-align: center;">The Summer Vibe</h2>
-    <div class="moodboard-grid">
-      <!-- Foto 1 -->
-      <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&q=80" alt="Sepatu">
-      <!-- Foto 2 -->
-      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&q=80" alt="Fashion">
-      <!-- FOTO 3: KOTAK PROMO BUNDLE -->
-      <div class="promo-box">
-        <h4>Beli 1 Set, Diskon 10%!</h4>
-        <p>Atasan + Bawahan biar makin kece.</p>
-        <a href="#" class="promo-btn">Ambil Promo</a>
+      <!-- Slider di dalam detail produk (bisa digeser) -->
+      <div class="detail-slider">
+        <img src="https://images.unsplash.com/photo-1583391733958-d25e07fac04f?w=800&q=80" alt="Kebaya depan">
+        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80" alt="Kebaya belakang">
+        <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800&q=80" alt="Kebaya detail">
       </div>
-      <!-- Foto 4 -->
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=500&q=80" alt="OOTD">
-      <!-- Foto 5 -->
-      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&q=80" alt="Shopping">
-      <!-- Foto 6 -->
-      <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&q=80" alt="Style">
     </div>
-  </section>
-
-  <!-- FOOTER CTA -->
-  <section class="footer-cta">
-    <h2>Siap Upgrade Style Kamu?</h2>
-    <p>Ratusan pilihan outfit nunggu kamu di katalog.</p>
-    <!-- Nanti tombol ini bakal nge-link ke index.html (katalog lama) -->
-    <a href="#" class="btn-main-katalog">Jelajahi Semua Katalog →</a>
   </section>
 
 </body>
