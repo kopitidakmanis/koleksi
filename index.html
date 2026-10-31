@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruang Gaya - Beranda</title>
+  
+  <!-- Font mirip Wash House & Pastael -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* PALET WARNA BERDASARKAN MOODBOARD KAMU */
+    :root {
+      --bg-cream: #F9F6F0;
+      --text-dark: #3A322C;
+      --orange-sunny: #E87A41;
+      --yellow-bright: #F4D03F;
+      --green-vibrant: #4D8A4E;
+      --blue-sky: #5D9CEC;
+      --white: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); color: var(--text-dark); line-height: 1.6; }
+    
+    /* NAVBAR */
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 40px; background: var(--white); border-bottom: 1px solid #eee;
+    }
+    .navbar-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; }
+    .navbar-menu { display: flex; gap: 24px; font-weight: 600; font-size: 0.9rem; }
+    .navbar-menu a { text-decoration: none; color: var(--text-dark); }
+    .navbar-cart { background: var(--text-dark); color: var(--white); padding: 8px 16px; border-radius: 50px; font-weight: 600; font-size: 0.8rem; text-decoration: none; }
+
+    /* HERO SECTION (TRUST FIRST) */
+    .hero {
+      text-align: center; padding: 80px 20px 40px; max-width: 900px; margin: 0 auto;
+    }
+    .hero-pre-title { font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; color: var(--orange-sunny); text-transform: uppercase; margin-bottom: 16px; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin-bottom: 24px; }
+    .hero-desc { font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto; }
+
+    /* TESTIMONI SLIDER (OPSI B) */
+    .testimoni-section { padding: 40px 20px 60px; overflow: hidden; }
+    .testimoni-slider {
+      display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 20px;
+      scrollbar-width: none; /* Sembunyikan scrollbar */
+    }
+    .testimoni-slider::-webkit-scrollbar { display: none; }
+    
+    .review-card {
+      flex: 0 0 280px; background: var(--white); border-radius: 16px; padding: 16px;
+      scroll-snap-align: start; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .review-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 12px; margin-bottom: 12px; background: #eee; }
+    .review-stars { color: var(--yellow-bright); font-size: 1rem; margin-bottom: 8px; }
+    .review-text { font-size: 0.9rem; font-weight: 600; margin-bottom: 12px; line-height: 1.4; }
+    .review-user { font-size: 0.8rem; color: #888; display: flex; align-items: center; gap: 8px; }
+    .review-user span { font-weight: 700; color: var(--text-dark); }
+
+    /* BEST SELLER (GAYA WASH HOUSE) */
+    .bestseller-section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
+    .bestseller-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; }
+    .bestseller-header h2 { font-family: 'Playfair Display', serif; font-size: 2rem; }
+    
+    .bestseller-card {
+      display: grid; grid-template-columns: 1fr 1fr; background: var(--orange-sunny);
+      border-radius: 24px; overflow: hidden; color: var(--white);
+    }
+    @media (max-width: 768px) { .bestseller-card { grid-template-columns: 1fr; } }
+    
+    .bestseller-info { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+    .bestseller-info h3 { font-family: 'Playfair Display', serif; font-size: 2.5rem; line-height: 1.1; margin-bottom: 16px; }
+    .bestseller-price { font-size: 1.5rem; font-weight: 800; margin-bottom: 24px; }
+    .btn-bestseller { background: var(--white); color: var(--orange-sunny); padding: 16px 32px; border-radius: 50px; font-weight: 800; text-decoration: none; display: inline-block; align-self: flex-start; }
+    
+    .bestseller-img { width: 100%; height: 100%; object-fit: cover; min-height: 300px; }
+
+    /* AESTHETIC GRID & BUNDLE */
+    .grid-section { padding: 40px 20px 80px; max-width: 1000px; margin: 0 auto; }
+    .moodboard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .moodboard-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 16px; }
+    
+    /* Kotak Promo di tengah grid */
+    .promo-box {
+      background: var(--green-vibrant); color: var(--white); border-radius: 16px;
+      padding: 24px; display: flex; flex-direction: column; justify-content: center; text-align: center;
+    }
+    .promo-box h4 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 8px; line-height: 1.2; }
+    .promo-box p { font-size: 0.85rem; margin-bottom: 16px; opacity: 0.9; }
+    .promo-btn { background: var(--yellow-bright); color: var(--text-dark); padding: 10px 20px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 0.85rem; }
+
+    /* FOOTER CTA */
+    .footer-cta { background: var(--text-dark); color: var(--white); text-align: center; padding: 80px 20px; }
+    .footer-cta h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 16px; }
+    .footer-cta p { color: #aaa; margin-bottom: 32px; }
+    .btn-main-katalog { background: var(--yellow-bright); color: var(--text-dark); padding: 18px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: inline-block; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-brand">ruang gaya.</div>
+    <div class="navbar-menu">
+      <a href="#">Beranda</a>
+      <a href="#">Katalog</a>
+      <a href="#">Custom</a>
+    </div>
+    <a href="#" class="navbar-cart">Keranjang (0)</a>
+  </nav>
+
+  <!-- HERO SECTION (TRUST) -->
+  <section class="hero">
+    <div class="hero-pre-title">Ulasan Pelanggan</div>
+    <h1 class="hero-title">10.000+ Gen Z sudah upgrade style-nya.</h1>
+    <p class="hero-desc">Jangan cuma lihat katalognya. Lihat sendiri kata mereka yang sudah pakai outfit dari ruang gaya.</p>
+  </section>
+
+  <!-- TESTIMONI SLIDER -->
+  <section class="testimoni-section">
+    <div class="testimoni-slider">
+      <!-- Kartu Review 1 -->
+      <div class="review-card">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80" alt="OOTD Sasha" class="review-img">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Bahannya adem banget, dipake jalan santai sama nongkrong enak. Fix langganan!"</p>
+        <div class="review-user">Oleh <span>@sasha_</span></div>
+      </div>
+      <!-- Kartu Review 2 -->
+      <div class="review-card">
+        <img src="https://images.unsplash.com/photo-1550614000-4b95d858288d?w=500&q=80" alt="OOTD Budi" class="review-img">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Gila sih ini, packaging rapi banget. Baju sesuai foto, ukurannya pas."</p>
+        <div class="review-user">Oleh <span>@budi_keren</span></div>
+      </div>
+      <!-- Kartu Review 3 -->
+      <div class="review-card">
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=500&q=80" alt="OOTD Naya" class="review-img">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Kualitas jahitannya rapi, ga murahan. Warnanya juga cakep banget!"</p>
+        <div class="review-user">Oleh <span>@nayabella</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST SELLER (Wash House Style) -->
+  <section class="bestseller-section">
+    <div class="bestseller-header">
+      <h2>Lagi Hype Minggu Ini</h2>
+    </div>
+    <div class="bestseller-card">
+      <div class="bestseller-info">
+        <h3>Kaos Oversize 'No Drama'</h3>
+        <p style="margin-bottom: 24px; opacity: 0.9;">Bahan Cotton Combed 30s. Adem, jatuh di badan, dan bikin look kamu instan kece.</p>
+        <div class="bestseller-price">Rp89.000</div>
+        <a href="#" class="btn-bestseller">+ Keranjang</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80" alt="Kaos Oversize" class="bestseller-img">
+    </div>
+  </section>
+
+  <!-- AESTHETIC GRID & BUNDLE -->
+  <section class="grid-section">
+    <h2 style="font-family: 'Playfair Display'; font-size: 2rem; margin-bottom: 24px; text-align: center;">The Summer Vibe</h2>
+    <div class="moodboard-grid">
+      <!-- Foto 1 -->
+      <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&q=80" alt="Sepatu">
+      <!-- Foto 2 -->
+      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&q=80" alt="Fashion">
+      <!-- FOTO 3: KOTAK PROMO BUNDLE -->
+      <div class="promo-box">
+        <h4>Beli 1 Set, Diskon 10%!</h4>
+        <p>Atasan + Bawahan biar makin kece.</p>
+        <a href="#" class="promo-btn">Ambil Promo</a>
+      </div>
+      <!-- Foto 4 -->
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=500&q=80" alt="OOTD">
+      <!-- Foto 5 -->
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&q=80" alt="Shopping">
+      <!-- Foto 6 -->
+      <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&q=80" alt="Style">
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <section class="footer-cta">
+    <h2>Siap Upgrade Style Kamu?</h2>
+    <p>Ratusan pilihan outfit nunggu kamu di katalog.</p>
+    <!-- Nanti tombol ini bakal nge-link ke index.html (katalog lama) -->
+    <a href="#" class="btn-main-katalog">Jelajahi Semua Katalog →</a>
+  </section>
+
+</body>
+</html>
