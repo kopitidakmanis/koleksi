@@ -28,7 +28,7 @@
     .navbar-brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; letter-spacing: 0.5px; }
     .navbar-cart { background: var(--sunset-orange); color: var(--white); padding: 10px 20px; border-radius: 50px; font-weight: 600; font-size: 0.85rem; text-decoration: none; }
 
-    /* HERO SECTION (FOTO BACKGROUND + TEKS ELEGAN) */
+    /* HERO SECTION */
     .hero {
       position: relative;
       width: 100%;
@@ -39,7 +39,6 @@
       justify-content: center;
       text-align: center;
       padding: 40px 24px;
-      /* Gradasi gelap agar teks putih terbaca jelas */
       background-image: 
         linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%), 
         url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&q=80');
@@ -50,6 +49,15 @@
     
     .hero-content { max-width: 800px; z-index: 2; }
     
+    /* BINTANG 5 */
+    .hero-stars {
+      color: #F4D03F; 
+      font-size: 1.8rem;
+      letter-spacing: 6px;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
+    }
+    
     .hero h1 { 
       font-family: 'Playfair Display', serif; 
       font-weight: 800;
@@ -58,10 +66,7 @@
       margin-bottom: 16px; 
     }
     
-    .hero h1 span { 
-      font-style: italic; 
-      color: var(--sunset-orange); 
-    }
+    .hero h1 span { font-style: italic; color: var(--sunset-orange); }
     
     .hero p { 
       font-size: 1.1rem; 
@@ -84,7 +89,6 @@
       text-decoration: none; 
       transition: transform 0.2s;
     }
-
     .btn-hero:hover { transform: scale(1.05); }
 
     /* SECTION PRODUK */
@@ -133,6 +137,7 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
+      <div class="hero-stars">★★★★★</div> <!-- BINTANG 5 DI SINI -->
       <h1>Ribuan orang sudah menjadi bagian dari <span>momen bahagianya.</span></h1>
       <p>Sekarang, giliran kamu. Bikin statement di setiap acara tanpa harus kaku.</p>
       <a href="katalog.html" class="btn-hero">Lihat Koleksi</a>
