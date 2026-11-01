@@ -8,100 +8,63 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
   
   <style>
-    /* PALET WARNA: ORANGE SUNSET */
     :root {
-      --bg-sunset: #FFF9F2; /* Dasar krem hangat */
+      --bg-sunset: #FFF9F2; 
       --sunset-orange: #E87A41; 
-      --sunset-yellow: #F4C753;
-      --text-dark: #3A2520; /* Coklat gelap kemerahan */
-      --accent-green: #3D6B4A; /* Hijau daun untuk tombol */
+      --text-dark: #3A2520; 
+      --accent-green: #3D6B4A; 
       --white: #FFFFFF;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    
     body { 
       font-family: 'Inter', sans-serif; 
-      /* Efek Gradient Sunset */
       background: linear-gradient(180deg, #FFF9F2 0%, #FFE4D0 100%);
-      color: var(--text-dark); 
-      line-height: 1.6; 
-      overflow-x: hidden; 
-      min-height: 100vh;
+      color: var(--text-dark); line-height: 1.6; overflow-x: hidden; min-height: 100vh;
     }
     
     /* NAVBAR */
-    .navbar {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 16px 24px; background: rgba(255, 255, 255, 0.8); 
-      backdrop-filter: blur(10px); /* Efek kaca transparan */
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      position: sticky; top: 0; z-index: 100;
-    }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
     .navbar-brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; letter-spacing: 0.5px; }
     .navbar-cart { background: var(--sunset-orange); color: var(--white); padding: 10px 20px; border-radius: 50px; font-weight: 600; font-size: 0.85rem; text-decoration: none; }
 
-    /* 1. HERO SECTION */
-    .hero {
-      text-align: center; padding: 60px 20px 40px; max-width: 800px; margin: 0 auto;
-    }
-    .hero h1 { 
-      font-family: 'Playfair Display', serif; 
-      font-size: clamp(2.2rem, 6vw, 3.5rem); 
-      line-height: 1.15; margin-bottom: 16px; 
-    }
+    /* HERO */
+    .hero { text-align: center; padding: 60px 20px 40px; max-width: 800px; margin: 0 auto; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 6vw, 3.5rem); line-height: 1.15; margin-bottom: 16px; }
     .hero h1 span { font-style: italic; color: var(--sunset-orange); }
     .hero p { font-size: 1rem; color: #7A655F; max-width: 500px; margin: 0 auto; }
 
-    /* SECTION TITLE */
     .section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 16px; padding-left: 24px; color: var(--text-dark); }
 
-    /* 2. PRODUK SLIDER (TANPA TEKS - FULL GAMBAR) */
+    /* PRODUK SLIDER */
     .product-section { padding: 20px 0 40px; }
-    .product-slider {
-      display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
-      padding: 0 24px 20px; scrollbar-width: none;
-    }
+    .product-slider { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 24px 20px; scrollbar-width: none; }
     .product-slider::-webkit-scrollbar { display: none; }
-    
-    /* Hanya kotak gambar, tanpa info teks di bawahnya */
-    .product-card {
-      flex: 0 0 180px; scroll-snap-align: start; 
-      border-radius: 20px; overflow: hidden; 
-      box-shadow: 0 10px 20px rgba(232, 122, 65, 0.15); /* Shadow oranye lembut */
-    }
-    .product-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; background: #eee; display: block; }
+    .product-card { flex: 0 0 180px; scroll-snap-align: start; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(232, 122, 65, 0.15); display: block; text-decoration: none; }
+    .product-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; background: #eee; display: block; transition: transform 0.3s; }
+    .product-card:hover .product-img { transform: scale(1.05); }
 
-    /* 3. REVIEW SLIDER */
+    /* REVIEW SLIDER */
     .review-section { padding: 40px 0; background: rgba(255, 255, 255, 0.5); margin: 20px 0; border-top: 1px solid rgba(232,122,65,0.1); border-bottom: 1px solid rgba(232,122,65,0.1); }
-    .review-slider {
-      display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
-      padding: 0 24px 20px; scrollbar-width: none;
-    }
+    .review-slider { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 24px 20px; scrollbar-width: none; }
     .review-slider::-webkit-scrollbar { display: none; }
-    .review-card {
-      flex: 0 0 280px; scroll-snap-align: start; 
-    }
+    .review-card { flex: 0 0 280px; scroll-snap-align: start; }
     .review-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px; margin-bottom: 12px; border: 3px solid var(--white); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
     .review-caption { font-size: 0.9rem; font-weight: 600; }
     .review-caption span { color: var(--sunset-orange); }
 
-    /* 4. DETAIL PRODUK (Split Screen) */
+    /* DETAIL PRODUK */
     .detail-section { padding: 40px 24px 80px; max-width: 900px; margin: 0 auto; }
-    .detail-card {
-      display: grid; grid-template-columns: 1fr; gap: 0; background: var(--white);
-      border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(232, 122, 65, 0.2); /* Shadow sunset */
-    }
+    .detail-card { display: grid; grid-template-columns: 1fr; gap: 0; background: var(--white); border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(232, 122, 65, 0.2); }
     @media(min-width: 768px) { .detail-card { grid-template-columns: 1fr 1fr; } }
-    
     .detail-info { padding: 32px; display: flex; flex-direction: column; justify-content: center; }
     .detail-info h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 12px; line-height: 1.1; }
     .detail-info p { color: #666; font-size: 0.95rem; margin-bottom: 24px; }
     .detail-price { font-size: 1.4rem; font-weight: 800; margin-bottom: 24px; color: var(--sunset-orange); }
-    .btn-add { background: var(--accent-green); color: var(--white); padding: 16px; border-radius: 50px; font-weight: 800; text-align: center; text-decoration: none; transition: transform 0.2s; }
+    
+    .btn-add { background: var(--accent-green); color: var(--white); padding: 16px; border-radius: 50px; font-weight: 800; text-align: center; text-decoration: none; transition: transform 0.2s; display: block;}
     .btn-add:hover { transform: scale(1.02); }
     
-    /* SLIDER DI DALAM DETAIL PRODUK */
     .detail-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
     .detail-slider::-webkit-scrollbar { display: none; }
     .detail-slider img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; min-height: 350px; scroll-snap-align: start; }
@@ -110,32 +73,28 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="navbar-brand">ruang gaya.</div>
-    <a href="#" class="navbar-cart">Keranjang (0)</a>
+    <!-- Tautan diarahkan ke file katalog.html -->
+    <a href="katalog.html" class="navbar-cart">Katalog & Keranjang</a>
   </nav>
 
-  <!-- 1. HERO SECTION -->
   <section class="hero">
     <h1>Ribuan orang sudah menjadi bagian dari <span>momen bahagianya.</span></h1>
     <p>Sekarang, giliran kamu. Bikin statement di setiap acara tanpa harus kaku.</p>
   </section>
 
-  <!-- 2. PRODUK SLIDER (FULL GAMBAR) -->
   <section class="product-section">
     <h2 class="section-title">Temukan Gayamu</h2>
     <div class="product-slider">
-      <!-- Hanya Gambar -->
-      <div class="product-card"><img src="https://images.unsplash.com/photo-1583391733958-d25e07fac04f?w=500&q=80" alt="Produk 1" class="product-img"></div>
-      <div class="product-card"><img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80" alt="Produk 2" class="product-img"></div>
-      <div class="product-card"><img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&q=80" alt="Produk 3" class="product-img"></div>
-      <div class="product-card"><img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500&q=80" alt="Produk 4" class="product-img"></div>
-      <div class="product-card"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80" alt="Produk 5" class="product-img"></div>
+      <a href="katalog.html" class="product-card"><img src="https://images.unsplash.com/photo-1583391733958-d25e07fac04f?w=500&q=80" alt="Produk 1" class="product-img"></a>
+      <a href="katalog.html" class="product-card"><img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80" alt="Produk 2" class="product-img"></a>
+      <a href="katalog.html" class="product-card"><img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&q=80" alt="Produk 3" class="product-img"></a>
+      <a href="katalog.html" class="product-card"><img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500&q=80" alt="Produk 4" class="product-img"></a>
+      <a href="katalog.html" class="product-card"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80" alt="Produk 5" class="product-img"></a>
     </div>
   </section>
 
-  <!-- 3. REVIEW SLIDER -->
   <section class="review-section">
     <h2 class="section-title">Momen Bersama Kami</h2>
     <div class="review-slider">
@@ -154,7 +113,6 @@
     </div>
   </section>
 
-  <!-- 4. HIGHLIGHT PRODUK -->
   <section class="detail-section">
     <h2 class="section-title" style="padding-left: 0;">Sorotan Minggu Ini</h2>
     <div class="detail-card">
@@ -162,9 +120,8 @@
         <h3>Kebaya Modern 'Sore'</h3>
         <p>Bahan brokat premium yang adem. Cocok banget dipadukan dengan sneakers atau celana kulot biar gaya kondanganmu nggak kaku.</p>
         <div class="detail-price">Rp249.000</div>
-        <a href="#" class="btn-add">+ Tambah ke Keranjang</a>
+        <a href="katalog.html" class="btn-add">Lihat di Katalog & Beli</a>
       </div>
-      <!-- Slider di dalam detail produk -->
       <div class="detail-slider">
         <img src="https://images.unsplash.com/photo-1583391733958-d25e07fac04f?w=800&q=80" alt="Kebaya depan">
         <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80" alt="Kebaya belakang">
