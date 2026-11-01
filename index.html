@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LAVANYA</title>
+  <title>Ruang Gaya - Modern Heritage</title>
   
-  <url('images/head.jpg')>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --bg-sunset: #FFF9F2; 
@@ -27,7 +28,7 @@
     .navbar-brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; letter-spacing: 0.5px; }
     .navbar-cart { background: var(--sunset-orange); color: var(--white); padding: 10px 20px; border-radius: 50px; font-weight: 600; font-size: 0.85rem; text-decoration: none; }
 
-    /* HERO SECTION */
+    /* HERO SECTION (FOTO BACKGROUND DARI FOLDER IMAGES) */
     .hero {
       position: relative;
       width: 100%;
@@ -40,7 +41,7 @@
       padding: 40px 24px;
       background-image: 
         linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%), 
-        url('images/a4.jpg');
+        url('images/a1.jpg'); /* FOTO HERO DIUBAH KE IMAGES */
       background-size: cover;
       background-position: center;
       color: var(--white);
@@ -96,8 +97,8 @@
     
     .product-slider { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 24px 20px; scrollbar-width: none; }
     .product-slider::-webkit-scrollbar { display: none; }
-    .product-card { flex: 0 0 180px; scroll-snap-align: start; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(232, 122, 65, 0.15); display: block; text-decoration: none; }
-    .product-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; background: #eee; display: block; transition: transform 0.3s; }
+    .product-card { flex: 0 0 180px; scroll-snap-align: start; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(232, 122, 65, 0.15); display: block; text-decoration: none; background: #eee; }
+    .product-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; transition: transform 0.3s; }
     .product-card:hover .product-img { transform: scale(1.05); }
 
     /* SECTION REVIEW */
@@ -105,7 +106,7 @@
     .review-slider { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 24px 20px; scrollbar-width: none; }
     .review-slider::-webkit-scrollbar { display: none; }
     .review-card { flex: 0 0 280px; scroll-snap-align: start; }
-    .review-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px; margin-bottom: 12px; border: 3px solid var(--white); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .review-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px; margin-bottom: 12px; border: 3px solid var(--white); box-shadow: 0 4px 12px rgba(0,0,0,0.05); background: #eee; }
     .review-caption { font-size: 0.9rem; font-weight: 600; }
     .review-caption span { color: var(--sunset-orange); }
 
@@ -121,7 +122,7 @@
     .btn-add { background: var(--accent-green); color: var(--white); padding: 16px; border-radius: 50px; font-weight: 800; text-align: center; text-decoration: none; transition: transform 0.2s; display: block;}
     .btn-add:hover { transform: scale(1.02); }
     
-    .detail-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .detail-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; background: #eee; }
     .detail-slider::-webkit-scrollbar { display: none; }
     .detail-slider img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; min-height: 350px; scroll-snap-align: start; }
   </style>
@@ -136,45 +137,49 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-stars">★★★★★</div> <!-- BINTANG 5 DI SINI -->
+      <div class="hero-stars">★★★★★</div>
       <h1>Ribuan orang sudah menjadi bagian dari <span>momen bahagianya.</span></h1>
-      <p>Sekarang, giliran kamu. Bikin statement di setiap acara.</p>
+      <p>Sekarang, giliran kamu. Bikin statement di setiap acara tanpa harus kaku.</p>
       <a href="katalog.html" class="btn-hero">Lihat Koleksi</a>
     </div>
   </section>
 
-  <!-- PRODUK SLIDER -->
+  <!-- PRODUK SLIDER (FOTO DARI IMAGES) -->
   <section class="product-section">
     <h2 class="section-title">Temukan Gayamu</h2>
     <div class="product-slider">
-      <a href="katalog.html" class="product-card"><img src="https://images/b2.jpg"></a>
-      <a href="katalog.html" class="product-card"><img src="https://images/c3.jpg"></a>
-      <a href="katalog.html" class="product-card"><img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&q=80" alt="Produk 3" class="product-img"></a>
-      <a href="katalog.html" class="product-card"><img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500&q=80" alt="Produk 4" class="product-img"></a>
-      <a href="katalog.html" class="product-card"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80" alt="Produk 5" class="product-img"></a>
+      <a href="katalog.html" class="product-card"><img src="images/a1.jpg" alt="Produk 1" class="product-img"></a>
+      <a href="katalog.html" class="product-card"><img src="images/a2.jpg" alt="Produk 2" class="product-img"></a>
+      <a href="katalog.html" class="product-card"><img src="images/a3.jpg" alt="Produk 3" class="product-img"></a>
+      <a href="katalog.html" class="product-card"><img src="images/a4.jpg" alt="Produk 4" class="product-img"></a>
+      <!-- Kalau belum ada a5, pakai a1 dulu atau hapus baris ini -->
+      <a href="katalog.html" class="product-card"><img src="images/a1.jpg" alt="Produk 5" class="product-img"></a>
     </div>
   </section>
 
-  <!-- REVIEW SLIDER -->
+  <!-- REVIEW SLIDER (FOTO DARI IMAGES) -->
   <section class="review-section">
     <h2 class="section-title">Momen Bersama Kami</h2>
     <div class="review-slider">
       <div class="review-card">
-        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=500&q=80" alt="Kondangan" class="review-img">
+        <!-- Anggap a2 adalah foto review kondangan -->
+        <img src="images/a2.jpg" alt="Kondangan" class="review-img">
         <p class="review-caption">Dipakai <span>@sasha_</span> ke acara kondangan minggu lalu.</p>
       </div>
       <div class="review-card">
-        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&q=80" alt="Konser" class="review-img">
+        <!-- Anggap a3 adalah foto review konser -->
+        <img src="images/a3.jpg" alt="Konser" class="review-img">
         <p class="review-caption">Gaya <span>@budi_keren</span> pas nonton konser pakai Batik Crop.</p>
       </div>
       <div class="review-card">
-        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=500&q=80" alt="Jalan" class="review-img">
+        <!-- Anggap a4 adalah foto review jalan sore -->
+        <img src="images/a4.jpg" alt="Jalan" class="review-img">
         <p class="review-caption">Jalan sore pakai outer tenun, makin kece kata <span>@nayabella</span>.</p>
       </div>
     </div>
   </section>
 
-  <!-- DETAIL PRODUK -->
+  <!-- DETAIL PRODUK (FOTO DARI IMAGES) -->
   <section class="detail-section">
     <h2 class="section-title" style="padding-left: 0;">Sorotan Minggu Ini</h2>
     <div class="detail-card">
@@ -185,9 +190,9 @@
         <a href="katalog.html" class="btn-add">Lihat di Katalog & Beli</a>
       </div>
       <div class="detail-slider">
-        <img src="https://images.unsplash.com/photo-1583391733958-d25e07fac04f?w=800&q=80" alt="Kebaya depan">
-        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80" alt="Kebaya belakang">
-        <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800&q=80" alt="Kebaya detail">
+        <img src="images/a1.jpg" alt="Kebaya depan">
+        <img src="images/a2.jpg" alt="Kebaya belakang">
+        <img src="images/a3.jpg" alt="Kebaya detail">
       </div>
     </div>
   </section>
