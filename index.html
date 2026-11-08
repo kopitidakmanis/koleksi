@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lavanya</title>
+  <title>Ruang Gaya - Modern Heritage</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
   
@@ -14,7 +14,6 @@
       --text-dark: #3A2520; 
       --accent-green: #3D6B4A; 
       --white: #FFFFFF;
-      --purple-btn: #9B88C8; /* Warna ungu tombol plus */
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -46,7 +45,19 @@
     .btn-hero:hover { transform: scale(1.05); }
 
     /* ==========================================
-       SECTION KOLEKSI (PENGGANTI REVIEW LAMA)
+       SECTION "TEMUKAN GAYAMU" (PINDAH KE ATAS & DISEDERHANAKAN)
+       ========================================== */
+    .product-section { padding: 40px 0; background: linear-gradient(180deg, var(--bg-sunset) 0%, #FFE4D0 100%); }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 16px; padding-left: 24px; color: var(--text-dark); }
+    
+    .product-slider { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 24px 20px; scrollbar-width: none; }
+    .product-slider::-webkit-scrollbar { display: none; }
+    .product-card { flex: 0 0 180px; scroll-snap-align: start; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(232, 122, 65, 0.15); display: block; text-decoration: none; background: #eee; }
+    .product-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; transition: transform 0.3s; }
+    .product-card:hover .product-img { transform: scale(1.05); }
+
+    /* ==========================================
+       SECTION "BETTER OUTFIT" (PINDAH KE BAWAH)
        ========================================== */
     .collection-section {
       padding: 60px 24px;
@@ -63,7 +74,7 @@
     .col-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; font-weight: 800; margin-bottom: 24px; }
     .col-line { width: 40px; height: 3px; background: var(--sunset-orange); margin-bottom: 24px; border-radius: 2px; }
     
-    /* Bagian Kanan: Grid Produk */
+    /* Bagian Kanan: Grid Produk (Bisa Digeser di HP) */
     .col-grid { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; scrollbar-width: none; }
     .col-grid::-webkit-scrollbar { display: none; }
     
@@ -73,10 +84,9 @@
     .col-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
     .col-card:hover .col-img-box img { transform: scale(1.05); }
 
-    .col-info { display: flex; justify-content: space-between; align-items: center; }
+    /* Info Bawah Gambar (Hanya Nama) */
+    .col-info { text-align: center; }
     .col-name { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
-    .col-plus { width: 32px; height: 32px; background: var(--purple-btn); color: var(--white); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; text-decoration: none; transition: transform 0.2s; }
-    .col-plus:hover { transform: scale(1.1); }
 
     /* Desktop Layout (2 Kolom) */
     @media(min-width: 900px) {
@@ -85,16 +95,6 @@
       .col-card { flex: 1; }
     }
     /* ========================================== */
-
-    /* SECTION PRODUK SLIDER LAMA */
-    .section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 16px; padding-left: 24px; color: var(--text-dark); }
-    .product-section { padding: 40px 0; background: linear-gradient(180deg, var(--bg-sunset) 0%, #FFE4D0 100%); }
-    
-    .product-slider { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 24px 20px; scrollbar-width: none; }
-    .product-slider::-webkit-scrollbar { display: none; }
-    .product-card { flex: 0 0 180px; scroll-snap-align: start; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(232, 122, 65, 0.15); display: block; text-decoration: none; background: #eee; }
-    .product-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; transition: transform 0.3s; }
-    .product-card:hover .product-img { transform: scale(1.05); }
 
     /* SECTION DETAIL PRODUK */
     .detail-section { padding: 40px 24px 80px; max-width: 900px; margin: 0 auto; background: #FFE4D0; }
@@ -118,58 +118,17 @@
     <a href="katalog.html" class="navbar-cart">Katalog & Keranjang</a>
   </nav>
 
-  <!-- HERO SECTION (Tetap) -->
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
       <div class="hero-stars">★★★★★</div>
       <h1>Ribuan orang sudah menjadi bagian dari <span>momen bahagianya.</span></h1>
-      <p>Sekarang, giliran kamu. Bikin statement di setiap acara.</p>
+      <p>Sekarang, giliran kamu. Bikin statement di setiap acara tanpa harus kaku.</p>
       <a href="katalog.html" class="btn-hero">Lihat Koleksi</a>
     </div>
   </section>
 
-  <!-- ==========================================
-       SECTION KOLEKSI BARU (PENGGANTI REVIEW LAMA)
-       ========================================== -->
-  <section class="collection-section">
-    <div class="col-text">
-      <div class="col-pre-title">The Concert Sereis</div>
-      <h2 class="col-title">Better<br>outfit.</h2>
-      <div class="col-line"></div>
-    </div>
-
-    <div class="col-grid">
-      <!-- Produk 1 -->
-      <div class="col-card">
-        <div class="col-img-box"><img src="images/a1.jpg" alt="Produk 1"></div>
-        <div class="col-info">
-          <div class="col-name">Kebaya Sore</div>
-          <a href="katalog.html" class="col-plus">+</a>
-        </div>
-      </div>
-
-      <!-- Produk 2 -->
-      <div class="col-card">
-        <div class="col-img-box"><img src="images/a2.jpg" alt="Produk 2"></div>
-        <div class="col-info">
-          <div class="col-name">Batik Crop</div>
-          <a href="katalog.html" class="col-plus">+</a>
-        </div>
-      </div>
-
-      <!-- Produk 3 -->
-      <div class="col-card">
-        <div class="col-img-box"><img src="images/a3.jpg" alt="Produk 3"></div>
-        <div class="col-info">
-          <div class="col-name">Outer Tenun</div>
-          <a href="katalog.html" class="col-plus">+</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ========================================== -->
-
-  <!-- PRODUK SLIDER LAMA (Tetap) -->
+  <!-- SECTION 1: TEMUKAN GAYAMU (PINDAH KE ATAS) -->
   <section class="product-section">
     <h2 class="section-title">Temukan Gayamu</h2>
     <div class="product-slider">
@@ -181,7 +140,40 @@
     </div>
   </section>
 
-  <!-- DETAIL PRODUK (Tetap) -->
+  <!-- SECTION 2: BETTER OUTFIT (PINDAH KE BAWAH) -->
+  <section class="collection-section">
+    <div class="col-text">
+      <div class="col-pre-title">Our Collection</div>
+      <h2 class="col-title">Better<br>outfit.</h2>
+      <div class="col-line"></div>
+    </div>
+
+    <div class="col-grid">
+      <!-- Produk 1 -->
+      <div class="col-card">
+        <div class="col-img-box"><img src="images/a1.jpg" alt="Kebaya Sore"></div>
+        <div class="col-info">
+          <div class="col-name">Kebaya Sore</div>
+        </div>
+      </div>
+      <!-- Produk 2 -->
+      <div class="col-card">
+        <div class="col-img-box"><img src="images/a2.jpg" alt="Batik Crop"></div>
+        <div class="col-info">
+          <div class="col-name">Batik Crop</div>
+        </div>
+      </div>
+      <!-- Produk 3 -->
+      <div class="col-card">
+        <div class="col-img-box"><img src="images/a3.jpg" alt="Outer Tenun"></div>
+        <div class="col-info">
+          <div class="col-name">Outer Tenun</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: DETAIL PRODUK -->
   <section class="detail-section">
     <h2 class="section-title" style="padding-left: 0;">Sorotan Minggu Ini</h2>
     <div class="detail-card">
